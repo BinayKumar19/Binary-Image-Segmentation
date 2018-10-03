@@ -232,9 +232,7 @@ double findPixelEnergyDownEdge(Mat& inImage,int i,int j)
 }
 
 double calProbDistribution(Mat& inImage,double r, double u, double sigma, double u2, double sigma2, int i, int j)
-{  double res ;
-
-	static const double K = 0.39904344223;  //   value of 1/ sqrt(2*pi)
+{  static const double K = 0.39904344223;  //   value of 1/ sqrt(2*pi)
      if(sigma !=0)
 	 { double a = pow((r - u),2);// / sigma;
        return (K / sqrt(sigma)) * std::exp(-0.5d * (a/sigma));
@@ -245,7 +243,6 @@ double calProbDistribution(Mat& inImage,double r, double u, double sigma, double
        a = pow((a - u2),2) ;
 	     return K * std::exp(-0.5d * a);
 	 }
-
 }
 
 double calInterPixelWeight(Mat& inImage,double w1, double w2, int i, int j,int x, int y)
